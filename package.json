@@ -1,10 +1,10 @@
 {
-  "name": "@bo/base-style",
-  "version": "1.0.0",
+  "name": "@knonginda/base-style",
+  "version": "1.0.1",
   "description": "backoffice base style",
-  "main": "./assets/design/combined.scss",
+  "main": "./dist/combined.scss",
   "scripts": {
-    "build": "concat ./assets/design/*.scss -o ./assets/design/combined.scss",
+    "build": "concat ./assets/design/*.scss -o ./dist/combined.scss",
     "lint:stylelint": "stylelint --fix",
     "lint:prettier": "prettier --write --loglevel warn",
     "lint:all:stylelint": "npm run lint:stylelint \"design/**/*.{scss}\"",
@@ -12,8 +12,9 @@
     "lint": "run-s lint:all:*"
   },
   "files": [
-    "./assets/design/combined.scss",
-    "./assets/fonts",
+    "./dist/combined.scss",
+    "./assets/fonts/*.woff",
+    "package.json",
     "README.md"
   ],
   "devDependencies": {
