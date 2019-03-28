@@ -1,10 +1,11 @@
 @mixin mp0 {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 @mixin ulreset {
   @include mp0;
+
   list-style-type: none;
 }
 
@@ -22,20 +23,21 @@
 }
 
 @mixin unselectable {
+  cursor: default;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  cursor: default;
 }
 
 @mixin ellipsis {
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 @mixin unclickable {
   @include unselectable;
+
   pointer-events: none;
 }
 
@@ -58,14 +60,12 @@
   }
 
   @if $include-parent {
-    & {
-      @content;
-    }
+    @content;
   }
 }
 
 @mixin media($type) {
-  @if $type==mobile or $type==phone or $type==tablet {
+  @if $type == mobile or $type == phone or $type == tablet {
     @media screen and (max-width: 600px) {
       @content;
     }
